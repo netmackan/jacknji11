@@ -17,6 +17,8 @@
 
   <target name="jar" depends="compile" description="jar">
     <jar jarfile="target/${ant.project.name}-${version}.jar" basedir="target/classes" />
+    <copy file="target/${ant.project.name}-${version}.jar" todir="/home/markus/VersionControlled/signserver/trunk-cc3/signserver/modules/mod-unlimitedkeys/files/lib/ext/"/>
+    <copy file="target/${ant.project.name}-${version}.jar" todir="/home/markus/VersionControlled/signserver/trunk-cc3/signserver/lib/ext/"/>
   </target>
 
   <target name="clean" description="clean">

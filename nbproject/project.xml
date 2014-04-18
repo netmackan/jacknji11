@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://www.netbeans.org/ns/project/1">
+    <type>org.netbeans.modules.ant.freeform</type>
+    <configuration>
+        <general-data xmlns="http://www.netbeans.org/ns/freeform-project/1">
+            <!-- Do not use Project Properties customizer when editing this file manually. 
+ To prevent the customizer from showing, create nbproject/project.properties file and enter 
+auxiliary.show.customizer=false 
+property there. Adding 
+auxiliary.show.customizer.message=<message>
+ will show your customized message when someone attempts to open the customizer.  -->
+            <name>jacknji11</name>
+            <properties/>
+            <folders>
+                <source-folder>
+                    <label>src/main/java</label>
+                    <type>java</type>
+                    <location>src/main/java</location>
+                </source-folder>
+                <source-folder>
+                    <label>src/test/java</label>
+                    <type>java</type>
+                    <location>src/test/java</location>
+                </source-folder>
+            </folders>
+            <ide-actions>
+                <action name="build">
+                    <target>jar</target>
+                </action>
+                <action name="clean">
+                    <target>clean</target>
+                </action>
+                <action name="rebuild">
+                    <target>clean</target>
+                    <target>jar</target>
+                </action>
+            </ide-actions>
+            <export>
+                <type>jar</type>
+                <location>target/jacknji11-1.0.jar</location>
+                <build-target>jar</build-target>
+            </export>
+            <view>
+                <items>
+                    <source-folder style="packages">
+                        <label>src/main/java</label>
+                        <location>src/main/java</location>
+                    </source-folder>
+                    <source-folder style="packages">
+                        <label>src/test/java</label>
+                        <location>src/test/java</location>
+                    </source-folder>
+                    <source-file>
+                        <location>build.xml</location>
+                    </source-file>
+                </items>
+                <context-menu>
+                    <ide-action name="build"/>
+                    <ide-action name="rebuild"/>
+                    <ide-action name="clean"/>
+                </context-menu>
+            </view>
+            <subprojects/>
+        </general-data>
+        <java-data xmlns="http://www.netbeans.org/ns/freeform-project-java/2">
+            <compilation-unit>
+                <package-root>src/main/java</package-root>
+                <classpath mode="compile">lib/commons-logging-1.1.jar:lib/jna-3.3.0.jar:lib/jnr-ffi-0.6.0.jar</classpath>
+                <built-to>target/jacknji11-1.0.jar</built-to>
+                <source-level>1.5</source-level>
+            </compilation-unit>
+            <compilation-unit>
+                <package-root>src/test/java</package-root>
+                <unit-tests/>
+                <classpath mode="compile">lib/commons-logging-1.1.jar:lib/jna-3.3.0.jar:lib/jnr-ffi-0.6.0.jar</classpath>
+                <source-level>1.5</source-level>
+            </compilation-unit>
+        </java-data>
+    </configuration>
+</project>
