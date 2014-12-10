@@ -34,6 +34,8 @@ import com.sun.jna.NativeLong;
 import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
 import com.sun.jna.ptr.PointerByReference;
+import org.pkcs11.jacknji11.CKR;
+import sun.security.pkcs11.wrapper.PKCS11Constants;
 
 /**
  * JNA wrapper for PKCS#11 CK_C_INITIALIZE_ARGS struct. Also includes JNA mutex interface wrappers.
@@ -51,6 +53,9 @@ public class JNA_CK_C_INITIALIZE_ARGS extends Structure {
     public JNA_CK_C_INITIALIZE_ARGS(final CK_C_INITIALIZE_ARGS args) {
         this.createMutex = new JNA_CK_CREATEMUTEX() {
             public long invoke(NativePointerByReference mutex) {
+                if (args == null || args.lockMutex == null) {
+                    return CKR.FUNCTION_FAILED; // TODO: Not sure this is correct but seems to work in this case
+                }
                 return args.createMutex.invoke(mutex);
             }
             public NativeLong invoke(PointerByReference mutex) {
@@ -60,6 +65,9 @@ public class JNA_CK_C_INITIALIZE_ARGS extends Structure {
         };
         this.destroyMutex = new JNA_CK_DESTROYMUTEX() {
             public long invoke(NativePointer mutex) {
+                if (args == null || args.lockMutex == null) {
+                    return CKR.FUNCTION_FAILED; // TODO: Not sure this is correct but seems to work in this case
+                }
                 return args.destroyMutex.invoke(mutex);
             }
             public NativeLong invoke(Pointer mutex) {
@@ -68,6 +76,9 @@ public class JNA_CK_C_INITIALIZE_ARGS extends Structure {
         };
         this.lockMutex = new JNA_CK_LOCKMUTEX() {
             public long invoke(NativePointer mutex) {
+                if (args == null || args.lockMutex == null) {
+                    return CKR.FUNCTION_FAILED; // TODO: Not sure this is correct but seems to work in this case
+                }
                 return args.lockMutex.invoke(mutex);
             }
             public NativeLong invoke(Pointer mutex) {
@@ -76,6 +87,9 @@ public class JNA_CK_C_INITIALIZE_ARGS extends Structure {
         };
         this.unlockMutex = new JNA_CK_UNLOCKMUTEX() {
             public long invoke(NativePointer mutex) {
+                if (args == null || args.lockMutex == null) {
+                    return CKR.FUNCTION_FAILED; // TODO: Not sure this is correct but seems to work in this case
+                }
                 return args.unlockMutex.invoke(mutex);
             }
             public NativeLong invoke(Pointer mutex) {
