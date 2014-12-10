@@ -35,7 +35,6 @@ import com.sun.jna.Pointer;
 import com.sun.jna.Structure;
 import com.sun.jna.ptr.PointerByReference;
 import org.pkcs11.jacknji11.CKR;
-import sun.security.pkcs11.wrapper.PKCS11Constants;
 
 /**
  * JNA wrapper for PKCS#11 CK_C_INITIALIZE_ARGS struct. Also includes JNA mutex interface wrappers.
